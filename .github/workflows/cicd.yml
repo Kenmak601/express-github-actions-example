@@ -18,10 +18,10 @@ steps:
 
 - name: Set up Node.js ${{ matrix.node-version }}
   uses: actions/setup-node@v1
-env:
-  PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: 'true'
-with:
-  node-version: ${{ matrix.node-version }}
+  env:
+    PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: 'true'
+  with:
+    node-version: ${{ matrix.node-version }}
 
 - name: Install dependencies
   run: npm install
